@@ -11,7 +11,7 @@ public class ContatoInterface {
         contatoController = new ContatoController();
     }
 
-    private int obterOpcao(){
+    private int getOpcao(){
         System.out.println("1. Incluir");
         System.out.println("2. Localizar");
         System.out.println("3. Excluir");
@@ -21,7 +21,7 @@ public class ContatoInterface {
         return scanner.nextInt();
     }
 
-    private void incluirContato(){
+    private void addContato(){
         String nome;
         String telefone;
         String email;
@@ -35,7 +35,7 @@ public class ContatoInterface {
         contatoController.addContato(contato);
     }
 
-    private void localizarContato(){
+    private void findContato(){
         String nome;
         System.out.print("Informe o nome: ");
         nome = scanner.next();
@@ -50,7 +50,7 @@ public class ContatoInterface {
         }
     }
 
-    private void excluirContato(){
+    private void removeContato(){
         String nome;
         System.out.print("Informe o nome: ");
         nome = scanner.next();
@@ -63,7 +63,7 @@ public class ContatoInterface {
         }
     }
 
-    private void listarContatos(){
+    private void getContatos(){
         ArrayList<Contato> contatos = contatoController.getContatos();
         Contato contato = null;
         for (Contato value : contatos) {
@@ -77,12 +77,12 @@ public class ContatoInterface {
     public void executar() {
         int opcao = 0;
         do{
-            opcao = obterOpcao();
+            opcao = getOpcao();
             switch (opcao) {
-                case 1 -> incluirContato();
-                case 2 -> localizarContato();
-                case 3 -> excluirContato();
-                case 4 -> listarContatos();
+                case 1 -> addContato();
+                case 2 -> findContato();
+                case 3 -> removeContato();
+                case 4 -> getContatos();
             }
         } while (opcao != 0);
     }

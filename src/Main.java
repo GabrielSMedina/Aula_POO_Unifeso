@@ -13,7 +13,9 @@ Classes que serão criadas:
  */
 
 import EX_Contatos.ContatoInterface;
-import EX_Figuras_geometricas.Circulo;
+import EX_Figuras_geometricas.*;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,14 +23,11 @@ public class Main {
         //ContatoInterface contatoInterface = new ContatoInterface();
         //contatoInterface.executar();
 
-        Circulo circulo1 = new Circulo();
-        Circulo circulo2 = new Circulo();
 
-        circulo1.calculaArea(2.0);
-        circulo2.calculaArea(6.0);
+        // Antes de executar alterar as formas para ficarem nos padroes do circulo
+        FormasInterface formasInterface = new FormasInterface();
+        formasInterface.executar();
 
-        System.out.println(circulo1.getArea());
-        System.out.println(circulo2.getArea());
 
     }
 }
