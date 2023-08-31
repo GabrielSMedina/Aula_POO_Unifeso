@@ -13,12 +13,22 @@ Classes que serão criadas:
  */
 
 import EX_Contatos.ContatoInterface;
+import EX_Figuras_geometricas.Circulo;
 
 public class Main {
     public static void main(String[] args) {
 
-        ContatoInterface contatoInterface = new ContatoInterface();
-        contatoInterface.executar();
+        //ContatoInterface contatoInterface = new ContatoInterface();
+        //contatoInterface.executar();
+
+        Circulo circulo1 = new Circulo();
+        Circulo circulo2 = new Circulo();
+
+        circulo1.calculaArea(2.0);
+        circulo2.calculaArea(6.0);
+
+        System.out.println(circulo1.getArea());
+        System.out.println(circulo2.getArea());
 
     }
 }
